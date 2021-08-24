@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 20:18:15 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/24 21:16:11 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/08/24 21:24:07 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Phonebook::search_display(int len)
 		else
 			search_display(len);
 	}
-	std::cout << "press enter key to continue...";
+	std::cout << "press enter key to continue..." << std::endl;
 	std::getchar();
 }
 
