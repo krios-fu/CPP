@@ -17,12 +17,12 @@ class Contact
 		virtual ~Contact();
 		/* set */
 		
-		void	set_fName(void);
-		void	set_lName(void);
-		void	set_nickName(void);
-		void	set_phone(void);
-		void	set_darkSecret(void);
-		
+		void	set_fName(std::string f_name);
+		void	set_lName(std::string l_name);
+		void	set_nickName(std::string nickName);
+		void	set_phone(std::string phone);
+		void	set_darkSecret(std::string darkSecret);
+		void	setInfo();
 		 /* get */
 		 
 		std::string	get_fName(void);

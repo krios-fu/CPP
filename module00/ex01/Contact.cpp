@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 00:45:03 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/08 02:43:58 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/08/24 20:48:49 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,49 +20,53 @@ Contact::~Contact()
 {
 }
 
-void Contact::set_fName(void)
+void Contact::setInfo()
 {
 	std::string data;
-
 	std::cout << "First Name:" << std::endl << ">> ";
 	std::getline(std::cin, data);
-	f_name = data;
-}
-
-void Contact::set_lName(void)
-{
-	std::string data;
-
+	set_fName(data);
 	std::cout << "Last Name:" << std::endl << ">> ";
 	std::getline(std::cin, data);
-	l_name = data;
-}
-
-void Contact::set_nickName(void)
-{
-	std::string data;
-
+	set_lName(data);
 	std::cout << "Nickname:" << std::endl << ">> ";
 	std::getline(std::cin, data);
-	nickName = data;
-}
-
-void Contact::set_phone(void)
-{
-	std::string data;
-
+	set_nickName(data);
 	std::cout << "Number Phone:" << std::endl << ">> ";
 	std::getline(std::cin, data);
-	phone = data;
-}
-
-void Contact::set_darkSecret(void)
-{
-	std::string data;
-
+	set_phone(data);
 	std::cout << "Dark Secret:" << std::endl << ">> ";
 	std::getline(std::cin, data);
-	darkSecret = data;
+	set_darkSecret(data);
+}
+
+void Contact::set_fName(std::string f_name)
+{
+
+	this->f_name = f_name;
+}
+
+void Contact::set_lName(std::string l_name)
+{
+
+	this->l_name = l_name;
+}
+
+void Contact::set_nickName(std::string nickName)
+{
+
+	this->nickName = nickName;
+}
+
+void Contact::set_phone(std::string phone)
+{
+
+	this->phone = phone;
+}
+
+void Contact::set_darkSecret(std::string darkSecret)
+{
+	this->darkSecret = darkSecret;
 }
 
 
@@ -70,25 +74,25 @@ void Contact::set_darkSecret(void)
 
 std::string Contact::get_fName(void)
 {
-	return (f_name);
+	return (this->f_name);
 }
 
 std::string Contact::get_lName(void)
 {
-	return (l_name);
+	return (this->l_name);
 }
 
 std::string Contact::get_nickName(void)
 {
-	return (nickName);
+	return (this->nickName);
 }
 
 std::string Contact::get_phone(void)
 {
-	return (phone);
+	return (this->phone);
 }
 
 std::string Contact::get_darkSecret(void)
 {
-	return (darkSecret);
+	return (this->darkSecret);
 }

@@ -5,58 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/08 00:05:35 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/08 04:45:08 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/08/24 20:18:15 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/08/24 21:07:22 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-static void	header(void)
+Phonebook::Phonebook(void)
 {
-	std::cout << " _____ _               _____         _   " << std::endl;
-	std::cout << "|  _  | |_ ___ ___ ___| __  |___ ___| |_ " << std::endl;
-	std::cout << "|   __|   | . |   | -_| __ -| . | . | '_|" << std::endl;
-	std::cout << "|__|  |_|_|___|_|_|___|_____|___|___|_,_|" << std::endl;
-	std::cout << "ADD, SEARCH, EXIT" << std::endl << std::endl;
+	this->pos = 0;
 }
 
-int main (void)
+Phonebook::~Phonebook()
 {
-	std::string line;
-	Contact contacts[8];
-	int	i, opc, len;
+}
 
+void Phonebook::addContact(void)
+{
+	if (this->pos == 8)
+		this->pos = 0;
+	this->contact[this->pos].setInfo();
+	this->pos++;
+}
+
+void Phonebook::print_contact(int pos)
+{
+	std::cout << this->contact[pos].get_fName() << std::endl;
+	std::cout << this->contact[pos].get_lName() << std::endl;
+	std::cout << this->contact[pos].get_nickName() << std::endl;
+	std::cout << this->contact[pos].get_phone() << std::endl;
+	std::cout << this->contact[pos].get_darkSecret() << std::endl;
+}
+
+void Phonebook::search_display(int len)
+{
+	int i;
+	std::string index;
 	i = 0;
-	opc = 0;
-	len = 0;
-	do
+	system("clear");
+	std::cout << "|*******************************************|" << std::endl;
+	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+	std::cout << "|*******************************************|" << std::endl;
+	while (i < len)
 	{
-		system("clear");
-		header();
-		std::cout << "> ";
-		getline(std::cin, line);
-		opc = menu(line);
-		switch (opc)
-		{
-			case 1:
-				system("clear");
-				header();
-				addContact(contacts[i]);
-				system("clear");
-				i++;
-				if (len < 8)
-					len = i;
-				if (i == 8)
-					i = 0;
-				break;
-			case 2:
-				search_display(contacts, len);
-				break;
-			default:
-				break;
-		}
+		std::cout << "|" << std::setw(10) << i;
+		print_format(this->contact[i].get_fName());
+		print_format(this->contact[i].get_lName());
+		print_format(this->contact[i].get_nickName());
+		std::cout << "|" << std::endl;
+		i++;
 	}
-	while (line.compare("EXIT"));
-	return (0);
+	std::cout << "|*******************************************|" << std::endl;
+	if (len > 0)
+	{
+		std::cout << "Search index: ";
+		std::getline(std::cin, index);
+		if (isdigit(index[0]))
+		{
+			if (atoi(&index[0]) < len)
+				print_contact(atoi(&index[0]));
+			else
+				search_display(len);
+		}
+		else
+			search_display(len);
+	}
+	std::cout << "press enter key to continue...";
+	std::getchar();
+}
+
+void Phonebook::print_format(std::string str)
+{
+	if (str.length() >= 10)
+		std::cout << "|" << str.substr(0, 9) << ".";
+	else
+		std::cout << "|" << std::setw(10) << str;
 }

@@ -1,4 +1,4 @@
-SRCS= 			Contact.cpp phonebook.cpp util.cpp
+SRCS= 			Contact.cpp Phonebook.cpp main.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
