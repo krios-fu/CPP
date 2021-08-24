@@ -7,14 +7,15 @@
 class Contact
 {
 	private:
-		std::string f_name;
-		std::string l_name;
-		std::string nickName;
-		std::string phone;
-		std::string darkSecret;
+		std::string _f_name;
+		std::string _l_name;
+		std::string _nickName;
+		std::string _phone;
+		std::string _darkSecret;
 	public:
 		Contact();
 		virtual ~Contact();
+
 		/* set */
 		
 		void	set_fName(std::string f_name);
@@ -23,8 +24,9 @@ class Contact
 		void	set_phone(std::string phone);
 		void	set_darkSecret(std::string darkSecret);
 		void	setInfo();
+
 		 /* get */
-		 
+
 		std::string	get_fName(void);
 		std::string	get_lName(void);
 		std::string	get_nickName(void);
