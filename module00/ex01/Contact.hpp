@@ -27,11 +27,11 @@ class Contact
 
 		 /* get */
 
-		std::string	get_fName(void);
-		std::string	get_lName(void);
-		std::string	get_nickName(void);
-		std::string	get_phone(void);
-		std::string	get_darkSecret(void);
+		std::string	get_fName(void) const;
+		std::string	get_lName(void) const;
+		std::string	get_nickName(void) const;
+		std::string	get_phone(void) const;
+		std::string	get_darkSecret(void) const;
 };
 
 #endif

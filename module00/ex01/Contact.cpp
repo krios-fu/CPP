@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 00:45:03 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/25 00:53:48 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/08/25 18:56:23 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,27 +71,27 @@ void Contact::set_darkSecret(std::string darkSecret)
 
 /* GET */
 
-std::string Contact::get_fName(void)
+std::string Contact::get_fName(void) const
 {
 	return (this->_f_name);
 }
 
-std::string Contact::get_lName(void)
+std::string Contact::get_lName(void) const
 {
 	return (this->_l_name);
 }
 
-std::string Contact::get_nickName(void)
+std::string Contact::get_nickName(void) const
 {
 	return (this->_nickName);
 }
 
-std::string Contact::get_phone(void)
+std::string Contact::get_phone(void) const
 {
 	return (this->_phone);
 }
 
-std::string Contact::get_darkSecret(void)
+std::string Contact::get_darkSecret(void) const
 {
 	return (this->_darkSecret);
 }

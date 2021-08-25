@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 20:18:15 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/24 21:24:07 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:07:20 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 Phonebook::Phonebook(void)
 {
-	this->pos = 0;
+	this->_pos = 0;
+	this->_len = 0;
 }
 
 Phonebook::~Phonebook()
@@ -23,10 +24,17 @@ Phonebook::~Phonebook()
 
 void Phonebook::addContact(void)
 {
-	if (this->pos == 8)
-		this->pos = 0;
-	this->contact[this->pos].setInfo();
-	this->pos++;
+	if (this->_pos == 8)
+		this->_pos = 0;
+	this->contact[this->_pos].setInfo();
+	if (this->_len < 8)
+		 this->_len++;
+	this->_pos++;
+}
+
+int Phonebook::getLen( void ) const
+{
+	return (this->_len);
 }
 
 void Phonebook::print_contact(int pos)
@@ -71,7 +79,7 @@ void Phonebook::search_display(int len)
 		else
 			search_display(len);
 	}
-	std::cout << "press enter key to continue..." << std::endl;
+	std::cout << "press enter key to continue..." << "\n";
 	std::getchar();
 }
 

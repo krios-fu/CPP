@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 00:05:35 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/24 21:12:23 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/08/25 20:12:40 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,9 @@ int main (void)
 {
 	std::string line;
 	Phonebook phonebook;
-	int	opc, len;
+	int	opc;
 
 	opc = 0;
-	len = 0;
 	do
 	{
 		system("clear");
@@ -53,11 +52,9 @@ int main (void)
 				header();
 				phonebook.addContact();
 				system("clear");
-				if (len < 8)
-					len++;
 				break;
 			case 2:
-				phonebook.search_display(len);
+				phonebook.search_display(phonebook.getLen());
 				break;
 			default:
 				break;
