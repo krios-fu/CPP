@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 19:27:35 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/31 21:21:03 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/08/31 22:07:01 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/08/31 23:06:30 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+#include "HumanA.hpp"
+
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon ( weapon ) 
 {
-	Zombie *zHorde;
-	std::string tmp;
+	this->_name = name;
+	
+}
 
-	if (N > 0)
-	{
-		zHorde = new Zombie[N];
-		if (!zHorde)
-			return (NULL);
-		for (int i = 0; i < N; i++)
-		{
-			if (i > 0)
-				tmp = name + std::to_string( i + 1 );
-			else
-				tmp = name;
-			zHorde[i].setName( tmp );
-		}
-		return(zHorde);
-	}
-	return (NULL);
+HumanA::~HumanA()
+{
+}
+
+void HumanA::attack( void )
+{
+	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
+}
+
+std::string HumanA::getName( void ) const
+{
+	return ( this->_name);
+}
+
+
+void HumanA::setName( std::string name )
+{
+	this->_name = name;
 }

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 17:44:25 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/31 21:21:19 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/08/31 21:54:59 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/08/31 22:56:50 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-int main ( void )
+Weapon::Weapon(/* args */)
 {
-	int n;
+}
 
-	n = 5;
-	Zombie *zHorbe = zombieHorde( n, "lol" );
-	if (!zHorbe)
-	{
-		std::cout << "Error" << std::endl;
-		return EXIT_FAILURE ;
-	}
-	for (int i = 0; i < n; i++)
-	{
-		zHorbe[i].announce();
-	}
-	delete []zHorbe;
-	return EXIT_SUCCESS ;
+Weapon::Weapon( std::string type)
+{
+	this->_type = type;
+}
+
+Weapon::~Weapon()
+{
+}
+
+std::string Weapon::getType( void ) const
+{
+	return (this->_type);
+}
+
+void Weapon::setType( std::string type)
+{
+	this->_type = type;
 }

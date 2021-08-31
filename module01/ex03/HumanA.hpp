@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 17:44:25 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/08/31 21:21:19 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/08/31 22:08:26 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/08/31 23:00:42 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_H
+# define HUMANA_H
 
-int main ( void )
+#include <string>
+#include "Weapon.hpp"
+#include "iostream"
+
+class HumanA
 {
-	int n;
+	private:
+		std::string _name;
+		Weapon &_weapon;
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA();
+		
+	std::string getName( void ) const;
+	void setName( std::string );
+	void attack( void );
+};
 
-	n = 5;
-	Zombie *zHorbe = zombieHorde( n, "lol" );
-	if (!zHorbe)
-	{
-		std::cout << "Error" << std::endl;
-		return EXIT_FAILURE ;
-	}
-	for (int i = 0; i < n; i++)
-	{
-		zHorbe[i].announce();
-	}
-	delete []zHorbe;
-	return EXIT_SUCCESS ;
-}
+
+# endif 
