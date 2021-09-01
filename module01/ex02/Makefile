@@ -11,7 +11,7 @@ NAME			= brain
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CPP) -o $(NAME) $(OBJS)
+				$(CPP) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)
