@@ -6,7 +6,7 @@ CPP				= clang++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-NAME			= Karen
+NAME			= Karen-filter
 
 all:			$(NAME)
 
