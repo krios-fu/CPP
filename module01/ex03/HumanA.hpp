@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 22:08:26 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/01 00:58:01 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/01 02:13:46 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <string>
 #include "Weapon.hpp"
-#include "iostream"
+#include <iostream>
 
 class HumanA
 {
