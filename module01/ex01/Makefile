@@ -4,14 +4,14 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 NAME			= zombieHorde
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CPP) $(CFLAGS) -o $(NAME) $(OBJS)
+				$(CPP) -o $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)
