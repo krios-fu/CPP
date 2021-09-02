@@ -6,11 +6,15 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/02 21:05:44 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/02 21:18:16 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/*
+** Constructor Default, Copy & Destructor
+*/
 
 Fixed::Fixed()
 {
@@ -32,6 +36,10 @@ Fixed::~Fixed()
 				<< std::endl;
 }
 
+/*
+** Operators overload =
+*/
+
 Fixed& Fixed::operator = (const Fixed &fixed)
 {
 	std::cout	<< "Assignation operator called"
@@ -39,6 +47,10 @@ Fixed& Fixed::operator = (const Fixed &fixed)
 	this->_raw = fixed._raw;
 	return (*this);
 }
+
+/*
+** SET & GET Functions
+*/
 
 int Fixed::getRawBits ( void ) const
 {
