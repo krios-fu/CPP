@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/02 21:18:16 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/03 16:06:07 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ Fixed::Fixed()
 	this->_raw = 0;
 }
 
+
+
 Fixed::Fixed (const Fixed &fixed)
 {
 	std::cout	<< "Copy constructor called"
 				<< std::endl;
 	this->_raw = fixed._raw;
 }
+
+
 
 Fixed::~Fixed()
 {
@@ -46,6 +50,17 @@ Fixed& Fixed::operator = (const Fixed &fixed)
 				<< std::endl;
 	this->_raw = fixed._raw;
 	return (*this);
+}
+
+
+/*
+** toInt & toFloat
+*/
+
+
+int Fixed::toInt( void )
+{
+	return (round(this->_raw * (1 << this->_bitFractional))); 
 }
 
 /*

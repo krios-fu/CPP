@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:35:30 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/02 21:15:02 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/03 16:21:03 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed
 
 		static const int	_bitFractional = 8;
 		int					_raw;
-		
+
 	public:
 
 		Fixed();
