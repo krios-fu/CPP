@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/03 17:14:08 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/03 17:21:24 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ Fixed& Fixed::operator = (const Fixed &fixed)
 {
 	std::cout	<< "Assignation operator called"
 				<< std::endl;
-	this->_raw = fixed._raw;
-	return (*this);
+	this->_raw = fixed.getRawBits();
+	return ( *this );
 }
 
 
