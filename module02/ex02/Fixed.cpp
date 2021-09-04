@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/04 03:09:22 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/04 17:29:01 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,6 +167,53 @@ bool Fixed::operator != (const Fixed &obj) const
 /*
 **  type Consversion
 */
+Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+Fixed const &min(Fixed const &a, Fixed const &b)
+{
+	return (Fixed::min(a, b));
+}
+
+Fixed &min(Fixed &a, Fixed &b)
+{
+	return (Fixed::min(a, b));
+}
+
+Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+Fixed const &max(Fixed const &a, Fixed const &b)
+{
+	return (Fixed::max(a, b));
+}
+
+Fixed &max(Fixed &a, Fixed &b)
+{
+	return (Fixed::max(a, b));
+}
 
 int Fixed::toInt ( void ) const
 {
