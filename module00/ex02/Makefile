@@ -4,14 +4,14 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS			= -Wall -Wextra -Werror -std=c++98
 
 NAME			= test
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				$(CPP) $(CFLAGS) -o $(NAME) $(OBJS)
+				$(CPP) $(XXCFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)

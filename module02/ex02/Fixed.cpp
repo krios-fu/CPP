@@ -6,48 +6,56 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/04 17:29:01 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/04 18:16:53 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 /*
-** Constructor Default, Copy & Destructor
+** Constructors
 */
 
 Fixed::Fixed()
 {
-	std::cout	<< "Default constructor called"
-				<< std::endl;
-
+	std::cout << "Default constructor called" << std::endl;
 	this->_raw = 0;
 }
 
-Fixed::Fixed ( const float raw ) : _raw(round(raw * (1 << this->_bitFractional)))
+Fixed::Fixed ( const float raw ) : _raw( round(raw * ( 1 << this->_bitFractional ) ) )
 {
-	std::cout	<< "Float constructor called"
-				<< std::endl;	
+	std::cout << "Float constructor called" << std::endl;	
 }
 
-Fixed::Fixed( const int raw ) : _raw(round(raw * (1 << this->_bitFractional)))
+Fixed::Fixed( const int raw ) : _raw( round(raw * ( 1 << this->_bitFractional ) ) )
 {
-	std::cout	<< "Int constructor called"
-				<< std::endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed (const Fixed &fixed)
+Fixed::Fixed ( const Fixed &fixed )
 {
-	std::cout	<< "Copy constructor called"
-				<< std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->operator=(fixed);
 }
 
 Fixed::~Fixed()
 {
-	std::cout	<< "Destructor called"
-				<< std::endl;
+	std::cout << "Destructor called" << std::endl;
+}
 
+/*
+** conversion 
+**
+*/
+
+int Fixed::toInt ( void ) const
+{
+	return ( ( ( int ) this->_raw / ( int ) ( 1 << this->_bitFractional ) ) );
+}
+
+float Fixed::toFloat ( void ) const
+{
+	return ( ( ( float ) this->_raw / ( float ) ( 1 << this->_bitFractional ) ) );
 }
 
 /*
@@ -60,13 +68,13 @@ std::ostream& operator<< ( std::ostream &o, const Fixed &obj )
 	return ( o );
 }
 
-Fixed& Fixed::operator= (const Fixed &obj)
+Fixed& Fixed::operator= ( const Fixed &obj )
 {
 	this->_raw = obj.getRawBits();
 	return ( *this );
 }
 
-Fixed Fixed::operator ++ ()
+Fixed Fixed::operator++ ()
 {
 	this->_raw++;
 	return ( *this );
@@ -125,104 +133,95 @@ Fixed Fixed::operator/ ( Fixed const &obj )
 	Fixed tmp( *this );
 	long aux1, aux2;
 
-	aux1 = ( (long)this->getRawBits() );
-	aux2 = ( (long)obj.getRawBits() );
-	tmp.setRawBits( (aux1 * (1 << this->_bitFractional)) / aux2 );
+	aux1 = ( ( long )this->getRawBits() );
+	aux2 = ( ( long )obj.getRawBits() );
+	tmp.setRawBits( ( aux1 * ( 1 << this->_bitFractional ) ) / aux2 );
 	return ( tmp );
 }
 
 
 /******** Logical *********/
 
-bool Fixed::operator > (const Fixed &obj) const
+bool Fixed::operator > ( const Fixed &obj ) const
 {
-	return ((this->_raw > obj.getRawBits()));
+	return ( ( this->_raw > obj.getRawBits() ) );
 }
 
-bool Fixed::operator < (const Fixed &obj) const
+bool Fixed::operator < ( const Fixed &obj ) const
 {
-	return ((this->_raw < obj.getRawBits()));
+	return ( ( this->_raw < obj.getRawBits() ) );
 }
 
 bool Fixed::operator == (const Fixed &obj) const
 {
-	return ((this->_raw == obj.getRawBits()));
+	return ( ( this->_raw == obj.getRawBits() ) );
 }
 
 bool Fixed::operator >= (const Fixed &obj) const
 {
-	return ((this->_raw >= obj.getRawBits()));
+	return ( ( this->_raw >= obj.getRawBits() ) );
 }
 
 bool Fixed::operator <= (const Fixed &obj) const
 {
-	return ((this->_raw <= obj.getRawBits()));
+	return ( ( this->_raw <= obj.getRawBits() ) );
 }
 
-bool Fixed::operator != (const Fixed &obj) const
+bool Fixed::operator != ( const Fixed &obj ) const
 {
-	return ((this->_raw != obj.getRawBits()));
+	return ( ( this->_raw != obj.getRawBits() ) );
 }
 
 /*
-**  type Consversion
+**  max & min
 */
-Fixed const &Fixed::min(Fixed const &a, Fixed const &b)
+
+Fixed const &Fixed::min( Fixed const &a, Fixed const &b )
 {
-	if (a > b)
-		return (b);
-	return (a);
+	if ( a > b )
+		return ( b );
+	return ( a );
 }
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-	if (a > b)
-		return (b);
-	return (a);
+	if ( a > b )
+		return ( b );
+	return ( a );
 }
 
-Fixed const &min(Fixed const &a, Fixed const &b)
+Fixed const &min( Fixed const &a, Fixed const &b )
 {
-	return (Fixed::min(a, b));
+	return ( Fixed::min( a, b ) );
 }
 
-Fixed &min(Fixed &a, Fixed &b)
+Fixed &min( Fixed &a, Fixed &b )
 {
-	return (Fixed::min(a, b));
+	return ( Fixed::min( a, b ) );
 }
 
-Fixed const &Fixed::max(Fixed const &a, Fixed const &b)
+Fixed const &Fixed::max( Fixed const &a, Fixed const &b )
 {
-	if (a > b)
-		return (a);
-	return (b);
+	if ( a > b )
+		return ( a );
+	return ( b );
 }
 
-Fixed &Fixed::max(Fixed &a, Fixed &b)
+Fixed &Fixed::max( Fixed &a, Fixed &b )
 {
-	if (a > b)
-		return (a);
-	return (b);
+	if ( a > b )
+		return ( a );
+	return ( b );
 }
 
-Fixed const &max(Fixed const &a, Fixed const &b)
+Fixed const &max( Fixed const &a, Fixed const &b )
 {
-	return (Fixed::max(a, b));
+	return ( Fixed::max( a, b ) );
 }
 
-Fixed &max(Fixed &a, Fixed &b)
+Fixed &max( Fixed &a, Fixed &b )
 {
-	return (Fixed::max(a, b));
-}
-
-int Fixed::toInt ( void ) const
-{
-	return ( ( ( int ) this->_raw / ( int ) ( 1 << this->_bitFractional ) ) );
-}
-
-float Fixed::toFloat ( void ) const
-{
-	return ( ( ( float ) this->_raw / ( float ) ( 1 << this->_bitFractional ) ) );
+	return ( Fixed::max( a, b ) );
 }
 
 /*
@@ -231,7 +230,6 @@ float Fixed::toFloat ( void ) const
 
 int Fixed::getRawBits ( void ) const
 {
-
 	return (this->_raw);
 }
 
