@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:35:30 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/03 21:39:05 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/04 02:34:38 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,28 @@ class Fixed
 		~Fixed();
 
 		Fixed&	operator =	( const Fixed &obj );
-		Fixed&	operator ++ ();
-		Fixed&	operator ++ ( int i );
+
+		Fixed	operator++ ();
+		Fixed	operator++ ( int i );
+
+		Fixed	operator-- ();
+		Fixed	operator-- ( int i );
+
+		Fixed	operator+ ( const Fixed &obj);
+		Fixed	operator- ( const Fixed &obj);
+
+		Fixed	operator* ( const Fixed &obj);
+		Fixed	operator/ ( const Fixed &obj);
+
+		bool	operator>	( const Fixed &obj ) const;
+		bool	operator<	( const Fixed &obj ) const;
+		bool	operator>=	( const Fixed &obj ) const;
+		bool	operator<=	( const Fixed &obj ) const;
+		bool	operator==	( const Fixed &obj ) const;
+		bool	operator!=	( const Fixed &obj ) const;
 
 
-		bool	operator >	( const Fixed &obj ) const;
-		bool	operator <	( const Fixed &obj ) const;
-		bool	operator >=	( const Fixed &obj ) const;
-		bool	operator <=	( const Fixed &obj ) const;
-		bool	operator ==	( const Fixed &obj ) const;
-		bool	operator !=	( const Fixed &obj ) const;
-
-
-		void	setRawBits( float raw );
+		void	setRawBits( int const raw );
 		int		getRawBits( void ) const;
 
 		int		toInt ( void ) const;
