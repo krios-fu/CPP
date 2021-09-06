@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:13:29 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 22:45:52 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/06 22:47:48 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(/* args */)
 
 ClapTrap::ClapTrap (std::string const & name)
 {
-	std::cout	<< BLUE"Constructor called"
+	std::cout	<< BLUE"Constructor called" << " ClapTrap"
 				<< WHITE << std::endl;
 	this->setName(name);
 	this->_energy_points = 10;
@@ -38,7 +38,7 @@ ClapTrap::~ClapTrap()
 {
 	
 	std::cout	<< RED"Destructor called, "
-				<< this->getName() << WHITE
+				<< this->getName() << WHITE " ClapTrap "
 				<<  std::endl;
 }
 
@@ -82,7 +82,7 @@ void	ClapTrap::takeDamage( unsigned int amount )
 	if ( hit_point > 0 )
 	{
 		if( hit_point > amount )
-			this->setHitPoints( (hit_point - amount) );
+			this->setHitPoints( ( hit_point - amount ) );
 		else 
 			this->setHitPoints ( 0 );
 		std::cout	<< this->getName()
@@ -100,10 +100,10 @@ void	ClapTrap::beRepaired( unsigned int amount )
 	int repaired;
 
 	repaired = 0;;
-	if ( this->_energy_points )
+	if ( this->_energy_points > 0 )
 	{
 		repaired =  this->_hit_points += amount;
-		repaired = ( repaired > 10 ) ? 10 : repaired;
+		repaired = (repaired > 100) ? 100 : repaired;
 		this->setHitPoints( repaired );
 		std::cout	<< this->getName()
 					<< " has been repaired with " <<  amount
@@ -115,19 +115,31 @@ void	ClapTrap::beRepaired( unsigned int amount )
 					<< " has not been repaired with " <<  amount
 					<< " energy points" << std::endl;
 	}
-	if ( this->_energy_points )
+	if (this->_energy_points > 0)
 		this->_energy_points--;
 }
 
 /************* SET & GET ************/
 
-void ClapTrap::setName ( std::string name ) { this->_name = name; }
+void ClapTrap::setName ( std::string name )
+{
+	this->_name = name;
+}
 
-void ClapTrap::setEnergyPoints( unsigned int energy_points) { this->_energy_points = energy_points; }
+void ClapTrap::setEnergyPoints( unsigned int energy_points)
+{
+	this->_energy_points = energy_points;
+}
 
-void ClapTrap::setAttackDamage( unsigned int attack_damage ) { this->_attack_damage = attack_damage; }
+void ClapTrap::setAttackDamage( unsigned int attack_damage )
+{
+	this->_attack_damage = attack_damage;
+}
 
-void ClapTrap::setHitPoints( unsigned int energy_points ) { this->_hit_points = energy_points; }
+void ClapTrap::setHitPoints( unsigned int energy_points )
+{
+	this->_hit_points = energy_points;
+}
 
 std::string ClapTrap::getName( void ) const { return this->_name; }
 
