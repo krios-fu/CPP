@@ -6,19 +6,13 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 20:54:28 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 23:47:01 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/06 23:46:17 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-
-
-ScavTrap::ScavTrap(/* args */)
-{
-}
-
-ScavTrap::ScavTrap(std::string name ) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name ) : ClapTrap( name )
 {
 	std::cout	<< BLUE"Constructor called" 	<< " ScavTrap "
 				<< WHITE << std::endl;
@@ -28,15 +22,15 @@ ScavTrap::ScavTrap(std::string name ) : ClapTrap(name)
 	this->_gate = 0;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & obj) : ClapTrap( obj._name )
+ScavTrap::ScavTrap(const ScavTrap & obj)  : ClapTrap( obj._name )
 {
 	std::cout	<< BLUE"Copy constructor called"
 				<< WHITE << std::endl;
-	this->operator=( obj );
+	this->operator=(obj);
 }
 
 
-ScavTrap& ScavTrap::operator= ( const ScavTrap & scavTrap )
+ScavTrap& ScavTrap::operator= ( const ScavTrap & scavTrap ) 
 {
 	std::cout	<< "Assignation operator called"
 				<< std::endl;
@@ -47,6 +41,7 @@ ScavTrap& ScavTrap::operator= ( const ScavTrap & scavTrap )
 	this->_hit_points = scavTrap.getHitPoints();
 	return (*this);
 }
+
 ScavTrap::~ScavTrap()
 {
 	std::cout	<< RED"Destructor called, " 
