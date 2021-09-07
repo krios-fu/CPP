@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:12:45 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 22:46:33 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:16:20 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ class ClapTrap
 		unsigned int _attack_damage;
 
 	public:
-
 		ClapTrap();
 		ClapTrap(std::string const & name);
 		ClapTrap(const ClapTrap &  clapTrap);

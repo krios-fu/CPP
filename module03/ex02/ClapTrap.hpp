@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:12:45 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 21:38:30 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:19:46 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ class ClapTrap
 	public:
 
 		ClapTrap();
-		ClapTrap(std::string const & name);
-		ClapTrap(const ClapTrap &  clapTrap);
+		ClapTrap( std::string const & name );
+		ClapTrap( const ClapTrap &  clapTrap );
 virtual ~ClapTrap();
 
-		ClapTrap & operator= (const ClapTrap &  clapTrap);
+		ClapTrap & operator= ( const ClapTrap &  clapTrap );
 
 virtual	void	attack( std::string const & target );
 		void	takeDamage( unsigned int amount );

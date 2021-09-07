@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 18:06:41 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 22:38:54 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:18:12 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void print_game(ScavTrap *robot[2], int id_atack, int id_take_d)
 {
-		system("clear");
+		system( "clear" );
 		std::cout << "|**********************************************|" << std::endl;
 		std::cout << "|                  ScavTrap GAME               |" << std::endl;
 		std::cout << "|**********************************************|\n" << std::endl;
@@ -54,7 +54,7 @@ int main ( void )
 				break ;
 			case ATTACK :
 				robot[id_atack]->attack( robot[id_take_d]->getName() );
-				robot[id_take_d]->takeDamage(robot[id_atack]->getAttackDamage() );
+				robot[id_take_d]->takeDamage( robot[id_atack]->getAttackDamage() );
 				break;
 			case BE_REPAIRED :
 				robot[id_atack]->beRepaired( 15 );
@@ -68,7 +68,7 @@ int main ( void )
 		id_atack = ( id_atack == 0 ) ? 1 : 0;
 		id_take_d = ( id_atack == 1 ) ? 0 : 1;
 		getchar();
-	} while (a.getHitPoints() > 0 && b.getHitPoints() > 0);
+	} while ( a.getHitPoints() > 0 && b.getHitPoints() > 0 );
 
 	print_game(robot, id_take_d, id_atack);
 	if (a.getHitPoints() > 0 )

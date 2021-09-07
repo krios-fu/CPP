@@ -6,11 +6,17 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 13:09:39 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/07 16:13:56 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:24:29 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+
+DiamondTrap::DiamondTrap()
+{
+	std::cout	<< BLUE"Default constructor called" << " DiamondTrap"
+				<< WHITE << std::endl;
+}
 
 DiamondTrap::DiamondTrap( std::string name )
 	: ClapTrap (name + "_clap_name") ,  ScavTrap ( name  ) , FragTrap( name ) 

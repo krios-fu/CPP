@@ -6,14 +6,18 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 22:54:41 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 23:49:13 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:23:29 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap (){}
+FragTrap::FragTrap ()
+{
+	std::cout	<< BLUE"Default constructor called" << " FragTrap"
+				<< WHITE << std::endl;
+}
 
 FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 {

@@ -6,15 +6,16 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:13:29 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 22:47:48 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:24:52 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(/* args */)
+ClapTrap::ClapTrap()
 {
-	
+	std::cout	<< BLUE"Default constructor called" << " ClapTrap"
+				<< WHITE << std::endl;
 }
 
 ClapTrap::ClapTrap (std::string const & name)
@@ -36,7 +37,6 @@ ClapTrap::ClapTrap(const ClapTrap &  clapTrap)
 
 ClapTrap::~ClapTrap()
 {
-	
 	std::cout	<< RED"Destructor called, "
 				<< this->getName() << WHITE " ClapTrap "
 				<<  std::endl;

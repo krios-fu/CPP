@@ -6,7 +6,7 @@ CPP				= clang++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow  -Wno-shadow
 
-NAME			= FragTrap
+NAME			= DiamondTrap
 
 all:			$(NAME)
 

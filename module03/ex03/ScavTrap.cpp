@@ -6,13 +6,18 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 20:54:28 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/07 15:39:09 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:23:49 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap () {}
+ScavTrap::ScavTrap () 
+{
+	std::cout	<< BLUE"Default Constructor called" 	<< " ScavTrap "
+				<< WHITE << std::endl;
+	
+}
 
 ScavTrap::ScavTrap(std::string name ) : ClapTrap( name )
 {

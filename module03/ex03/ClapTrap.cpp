@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:13:29 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 22:47:48 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:23:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 ClapTrap::ClapTrap(/* args */)
 {
+	std::cout	<< BLUE"Default constructor called" << " ClapTrap"
+				<< WHITE << std::endl;
 	
 }
 

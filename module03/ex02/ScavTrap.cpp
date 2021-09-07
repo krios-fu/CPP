@@ -6,13 +6,20 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 20:54:28 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/06 23:46:17 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 16:22:45 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name ) : ClapTrap( name )
+ScavTrap::ScavTrap()
+{
+	std::cout	<< BLUE"Default constructor called" 	<< " ScavTrap "
+				<< WHITE << std::endl;
+	
+}
+
+ScavTrap::ScavTrap( std::string name ) : ClapTrap( name )
 {
 	std::cout	<< BLUE"Constructor called" 	<< " ScavTrap "
 				<< WHITE << std::endl;
@@ -22,7 +29,7 @@ ScavTrap::ScavTrap(std::string name ) : ClapTrap( name )
 	this->_gate = 0;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & obj)  : ClapTrap( obj._name )
+ScavTrap::ScavTrap( const ScavTrap & obj )  : ClapTrap( obj._name )
 {
 	std::cout	<< BLUE"Copy constructor called"
 				<< WHITE << std::endl;
