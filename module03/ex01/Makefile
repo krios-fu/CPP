@@ -4,9 +4,9 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
-NAME			= ClapTrap
+NAME			= ScavTrap
 
 all:			$(NAME)
 

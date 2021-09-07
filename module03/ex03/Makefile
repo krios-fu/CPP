@@ -1,12 +1,12 @@
-SRCS= 			main.cpp Fixed.cpp
+SRCS= 			ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow  -Wno-shadow
 
-NAME			= Fixed
+NAME			= FragTrap
 
 all:			$(NAME)
 

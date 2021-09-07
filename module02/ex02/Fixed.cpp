@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:43:14 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/04 18:16:53 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/07 15:09:23 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ Fixed Fixed::operator-- ( int i )
 }
 
 
-Fixed	Fixed::operator+ ( const Fixed &obj )
+Fixed	Fixed::operator+ ( const Fixed &obj )  
 {
 	this->setRawBits( this->getRawBits() + obj.getRawBits() );
 	return (*this);
