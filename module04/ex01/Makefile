@@ -4,7 +4,7 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= clang++
 RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+CXXFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow -fsanitize=address
 
 NAME			= Animal
 

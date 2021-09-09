@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:11:25 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/08 19:09:21 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/09 16:55:28 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Animal::~Animal()
 
 Animal& Animal::operator=(const Animal & obj)
 {
+	std::cout	<< "Operator = Animal called" << std::endl;
 	this->setType( obj.getType() );
 	return *this;
 }

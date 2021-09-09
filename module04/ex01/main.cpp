@@ -6,33 +6,50 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:03:06 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/09 15:49:04 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/09 17:00:56 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-
 int main()
 {
 
-	Animal *array [42];
+	Animal *array_animal [10];
 
-	Animal *a = new Cat();
+	Cat *a = new Cat();
 	
-	Cat dst = a; 
+	Cat *dst = new Cat();
 
-	for (size_t i = 0; i < 42; i++)
+	a->setType("hola");
+
+	*dst = *a; 
+
+	delete a;
+	std::cout << std::endl; 
+	std::cout << dst->getType();
+	std::cout << std::endl; 
+
+	dst->makeSound();
+	std::cout << std::endl; 
+
+	for (size_t i = 0; i < 10; i++)
 	{
-		if (i < 21)
-			array[i] = new Dog();
+		if (i < 5)
+			array_animal[i] = new Dog();
 		else
-			array[i] = new Cat();
+			array_animal[i] = new Cat();
 	}
 
+	for (size_t i = 0; i < 10; i++)
+	{
+		std::cout << "[" << i + 1 << "]" << "\t"<< array_animal[i]->getType() << " ";
+		array_animal[i]->makeSound();
+	}
 	
 
-	delete [] array ;
+	for (size_t i = 0; i < 10; i++)
+		delete array_animal[i];
 	
 	return 0;
 }
