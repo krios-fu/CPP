@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 20:44:18 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/08 21:08:30 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/09 15:13:00 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Brain
 		std::string ideas [ 100 ];
 	public:
 		Brain();
-		Brain ( const Brain & Brain );
-		Brain ( const Brain & Brain );
+		Brain ( const Brain & obj );
 virtual	~Brain();
 
 		Brain& operator= ( const Brain & Brain );

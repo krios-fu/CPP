@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:37:13 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/08 17:38:47 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/09 14:58:57 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
+		Brain * _brain; 
 
 	public:
 		Cat();
