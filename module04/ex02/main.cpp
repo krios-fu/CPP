@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:03:06 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/09 20:01:36 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/10 13:31:33 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
 	Animal *array_animal [10];
 
 	// Animal l;
-	// l.getType(); 	
+	// l.getType();
 	Cat *a = new Cat();
 	
 	Cat *dst = new Cat();
