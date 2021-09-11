@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 20:51:07 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 23:21:45 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:39:26 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ Character::Character( std::string name )
 
 Character::Character ( const Character & obj )
 {
-	this->operator=( obj );
+	this->_name = obj.getName();
+
+	for (size_t i = 0; i < obj.amount; i++)
+		this->equip( obj._materia[i] );
+	this->amount = obj.amount;
 }
 
 Character::~Character()
@@ -41,13 +45,13 @@ Character::~Character()
 Character & Character::operator= ( Character const & obj )
 {
 	this->_name = obj.getName();
+
 	for (size_t i = 0; i < this->amount; i++)
-		delete this->_materia[i];
+			delete this->_materia[i];
 	this->amount = 0;
 	for (size_t i = 0; i < obj.amount; i++)
-		this->equip( obj._materia[i]->clone() );
-	for (size_t i = 0; i < this->amount; i++)
-		this->_materia[i] = nullptr;
+		this->equip( obj._materia[i] );
+	this->amount = obj.amount;
 	return *this;
 }
 

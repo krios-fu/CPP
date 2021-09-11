@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 18:54:34 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 23:22:10 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:44:10 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ AMateria* Cure::clone() const
 
 void Cure::use ( ICharacter& target )
 {
-	std::cout << "Estoy" << std::endl;
-	std::cout << "* heals " << target.getName() << " wounds *";
+	std::cout << "* heals " << target.getName() << " wounds *" << std::endl;
 }
 
 

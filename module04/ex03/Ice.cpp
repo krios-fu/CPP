@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:45:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 22:54:46 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:44:25 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Ice & Ice::operator= ( const Ice & obj )
 
 void Ice::use( ICharacter & target )
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;;
 }
 
 AMateria* Ice::clone () const 
