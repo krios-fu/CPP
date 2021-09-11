@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:23:43 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 20:38:47 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 21:52:16 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource(/* args */);
 		MateriaSource ( const MateriaSource & obj );
-		~MateriaSource();
+virtual	~MateriaSource();
 		
 	MateriaSource & operator= ( const MateriaSource & obj );
 	void		learnMateria( AMateria* new_materia );

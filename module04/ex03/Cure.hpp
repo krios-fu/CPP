@@ -20,7 +20,7 @@ class Cure : public AMateria
 	public:
 		Cure(/* args */);
 		Cure( const Cure & obj );
-		~Cure();
+virtual	~Cure();
 
 		Cure & operator= ( const Cure & obj );
 

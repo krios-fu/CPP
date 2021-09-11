@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 13:37:32 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 18:38:44 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 21:51:05 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "ICharacter.hpp"
 #include <iostream>
 
+class ICharacter;
+
 class AMateria
 {
 	private:
@@ -26,7 +28,7 @@ class AMateria
 	public:
 		AMateria( std::string const &type );
 		AMateria( const AMateria & obj );
-		~AMateria();
+virtual ~AMateria();
 		AMateria& operator = (const AMateria & obj );
 
 		std::string const & getType() const;

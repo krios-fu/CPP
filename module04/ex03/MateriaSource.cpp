@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 19:26:26 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 20:43:43 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 21:53:10 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ AMateria* MateriaSource::createMateria( std::string const & type )
 				return _materia_source[i]->clone();
 		}
 	}
+	return nullptr;
 }

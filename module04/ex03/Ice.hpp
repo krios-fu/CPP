@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 16:26:29 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 18:52:54 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 21:51:28 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Ice : virtual public AMateria
 	public:
 		Ice(/* args */);
 		Ice ( const Ice & obj );
-		~Ice();
+virtual	~Ice();
 
 		Ice & operator= (const Ice & obj);
 
