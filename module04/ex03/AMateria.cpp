@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 16:23:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 20:44:44 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/09/11 18:06:53 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/09/11 18:41:01 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#include "AMateria.hpp"
 
-#include "ICharacter.hpp"
+AMateria::AMateria(){}
 
-class Character : public ICharacter
+AMateria::AMateria ( std::string const & type )
 {
-	private:
-		AMateria *_materia[4];
-		std::string _name;
-	public:
-		Character();
-		~Character();
+	this->_type = type;
+}
 
-		void				equip( AMateria* m );
-		void				unequip( int idx );
-		void				use( int idx, ICharacter& target );
-		std::string const &	getName();
-};
+AMateria::AMateria ( const AMateria & obj )
+{
+	this->operator= ( obj );
+}
 
-#endif
+AMateria& AMateria::operator= ( const AMateria & obj)
+{
+	this->_type = obj._type;
+	return ( *this );
+}
+
+std::string const & AMateria::getType() const
+{
+	return this->_type;
+}

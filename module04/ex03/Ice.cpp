@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 16:26:29 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 18:52:54 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/09/11 17:45:09 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/09/11 19:14:11 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-#define ICE_HPP
+#include "Ice.hpp"
 
-#include "AMateria.hpp"
+Ice::Ice () : AMateria("ice") {}
 
-class Ice : virtual public AMateria
+Ice::Ice ( const Ice & obj ) 
+	:AMateria( "ice" ) {}
+
+Ice::~Ice() {}
+
+Ice & Ice::operator= ( const Ice & obj )
 {
-	public:
-		Ice(/* args */);
-		Ice ( const Ice & obj );
-		~Ice();
+	this->_type = obj.getType();
+	return *this;
+}
 
-		Ice & operator= (const Ice & obj);
+void Ice::use( ICharacter & target )
+{
+	AMateria::use( target );
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
+}
 
-		AMateria*	clone () const;
-		void		use( ICharacter& target );
-
-};
-
-#endif 
+AMateria* Ice::clone () const 
+{
+	return ( new Ice( *this ) );
+}

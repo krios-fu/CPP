@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Cure.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/10 16:23:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 20:44:44 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/09/10 16:26:29 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/09/10 18:03:02 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character : public ICharacter
+class Cure : public AMateria
 {
-	private:
-		AMateria *_materia[4];
-		std::string _name;
 	public:
-		Character();
-		~Character();
+		Cure(/* args */);
+		Cure( const Cure & obj );
+		~Cure();
 
-		void				equip( AMateria* m );
-		void				unequip( int idx );
-		void				use( int idx, ICharacter& target );
-		std::string const &	getName();
+		Cure & operator= ( const Cure & obj );
+
+		void		use( ICharacter& target );
+		AMateria*	clone () const;
 };
 
-#endif
+#endif 
