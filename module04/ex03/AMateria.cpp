@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 18:06:53 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 18:41:01 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:23:19 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ AMateria::AMateria ( std::string const & type )
 	this->_type = type;
 }
 
+AMateria::~AMateria(){}
 AMateria::AMateria ( const AMateria & obj )
 {
 	this->operator= ( obj );

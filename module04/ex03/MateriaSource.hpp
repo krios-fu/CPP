@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 17:23:43 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 21:52:16 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 22:08:05 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		unsigned int amount;
+		size_t amount;
 		AMateria * _materia_source[ 4 ];
 	public:
-		MateriaSource(/* args */);
+		MateriaSource();
 		MateriaSource ( const MateriaSource & obj );
 virtual	~MateriaSource();
 		

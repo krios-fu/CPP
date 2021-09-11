@@ -6,20 +6,25 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 19:26:26 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 21:53:10 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:15:15 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource () {}
+MateriaSource::MateriaSource () : amount(0){}
 
-MateriaSource::MateriaSource (const MateriaSource & obj)
+MateriaSource::MateriaSource ( const MateriaSource & obj ) : amount(0)
 {
 	this->operator=( obj );
 }
 
-MateriaSource & MateriaSource::operator= ( const MateriaSource & obj )
+MateriaSource::~MateriaSource()
+{
+	
+}
+
+MateriaSource & MateriaSource::operator= ( const MateriaSource & obj ) 
 {
 	for (size_t i = 0; i < 4; i++)
 		this->_materia_source[ i ] = obj._materia_source[ i ];
@@ -29,25 +34,18 @@ MateriaSource & MateriaSource::operator= ( const MateriaSource & obj )
 
 void MateriaSource::learnMateria ( AMateria* new_materia )
 {
-	if ( amount <= 4)
-	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			if (this->_materia_source[i])
-				this->_materia_source[i] = new_materia;
-		}
-	}
+
+	for (size_t i = 0; i < this->amount; i++)
+		if (!this->_materia_source[i])
+			return ;
+	this->_materia_source[this->amount++] = new_materia;
+	
 }
 
 AMateria* MateriaSource::createMateria( std::string const & type )
 {
-	if (amount > 0)
-	{
-		for (size_t i = 0; i < 4; i++)
-		{
-			if ( !(this->_materia_source[i]->getType().compare( type ) ))
-				return _materia_source[i]->clone();
-		}
-	}
+	for (size_t i = 0; i < 4; i++)
+		if ( this->_materia_source[i]->getType() ==  type )
+			return this->_materia_source[i]->clone();
 	return nullptr;
 }

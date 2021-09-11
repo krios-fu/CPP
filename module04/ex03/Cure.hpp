@@ -18,7 +18,7 @@
 class Cure : public AMateria
 {
 	public:
-		Cure(/* args */);
+		Cure();
 		Cure( const Cure & obj );
 virtual	~Cure();
 
