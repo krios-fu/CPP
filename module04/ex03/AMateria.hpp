@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 13:37:32 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 23:23:03 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:31:44 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class AMateria
 		AMateria( std::string const &type );
 		AMateria( const AMateria & obj );
 virtual ~AMateria();
+
 		AMateria& operator = (const AMateria & obj );
 
 		std::string const & getType() const;

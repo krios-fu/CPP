@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 19:26:26 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 23:54:25 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:34:42 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ void MateriaSource::learnMateria ( AMateria* new_materia )
 {
 	if (this->amount == 4)
 		return ;
-	for (size_t i = 0; i < this->amount; i++)
+	for ( size_t i = 0; i < this->amount; i++ )
 		if (!this->_materia_source[i])
 			return ;
-	this->_materia_source[this->amount++] = new_materia;
+	this->_materia_source[ this->amount++ ] = new_materia;
 	
 }
 
 AMateria* MateriaSource::createMateria( std::string const & type )
 {
-	for (size_t i = 0; i < this->amount; i++)
-		if ( this->_materia_source[i]->getType() ==  type )
-			return this->_materia_source[i]->clone();
+	for ( size_t i = 0; i < this->amount; i++ )
+		if ( this->_materia_source[ i ]->getType() ==  type )
+			return this->_materia_source[ i ]->clone();
 	return 0;
 }

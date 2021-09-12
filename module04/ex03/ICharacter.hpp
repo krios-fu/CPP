@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 13:42:58 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 21:51:58 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:34:12 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include <string>
 #include "AMateria.hpp"
+
 class AMateria;
 
 class ICharacter
 {
 	public:
+
 virtual	~ICharacter(){};
 
 virtual std::string const &	getName() const = 0;
