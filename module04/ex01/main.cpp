@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 16:03:06 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/09 17:00:56 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:15:39 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main()
 
 	for (size_t i = 0; i < 10; i++)
 		delete array_animal[i];
+	delete dst;
 	
 	return 0;
 }

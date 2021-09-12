@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:37:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/09 16:55:11 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:16:41 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Dog & Dog::operator= (const Dog & dog)
 {
 	std::cout	<< "Operator = Dog called" << std::endl;
 	this->setType( dog.getType() );
-	this->_brain = dog._brain;
+	this->_brain = new Brain( *dog._brain );
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 15:37:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/09 16:54:28 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/12 15:16:54 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cat & Cat::operator= (const Cat & cat)
 {
 	std::cout	<< "Operator = Cat called" << std::endl;
 	this->setType( cat.getType() );
-	this->_brain = cat._brain;
+	this->_brain = new Brain( *cat._brain );
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 20:51:07 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/11 23:39:26 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/11 23:52:07 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Character::Character()
 {
 	this->amount = 0;
 	for (size_t i = 0; i < 4; i++)
-		this->_materia[i] = nullptr;
+		this->_materia[i] = 0;
 }
 
 Character::Character( std::string name )
@@ -24,7 +24,7 @@ Character::Character( std::string name )
 	this->_name = name;
 	this->amount = 0;
 	for (size_t i = 0; i < 4; i++)
-		this->_materia[i] = nullptr;
+		this->_materia[i] = 0;
 }
 
 Character::Character ( const Character & obj )
@@ -68,7 +68,7 @@ void	Character::unequip( int idx )
 	for (size_t i = idx ; i < this->amount - 1; i++)
 	{
 		this->_materia[i] = this->_materia[i + 1];
-		this->_materia[ i +  1] = nullptr;
+		this->_materia[ i +  1] = 0;
 	}
 	this->amount--;
 }
