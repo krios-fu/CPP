@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/14 21:51:20 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:52:51 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int Form::getExecuteGrade() const
 	return this->_execute_grade;
 }
 
-bool Form::getStatus()
+bool Form::getStatus() const 
 {
 	return this->_status;
 }

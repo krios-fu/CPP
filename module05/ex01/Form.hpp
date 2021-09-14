@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:33 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/14 21:51:15 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:52:42 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ class Form
 		const std::string&	getName()			const;
 		int					getSignedGrade()	const;
 		int					getExecuteGrade()	const;
-		bool				getStatus();
+		bool				getStatus()			const;
 		
 };
 
