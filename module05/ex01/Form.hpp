@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:33 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/14 21:46:43 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/14 21:51:15 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ class Form
 				virtual const char *what() const throw ();
 		};
 
-		void beSigned( const Bureaucrat & obj );
+		void				beSigned( const Bureaucrat & obj );
 
 		const std::string&	getName()			const;
-		int			getSignedGrade()	const;
-		int			getExecuteGrade()	const;
-		bool				getStatus()			const;
+		int					getSignedGrade()	const;
+		int					getExecuteGrade()	const;
+		bool				getStatus();
 		
 };
 
