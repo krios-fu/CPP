@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:14:49 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/12 17:56:10 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:02:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ virtual	~Bureaucrat();
 			virtual const char *what() const throw ();
 	};
 
-		int					getGrade()		const ;
+		int					getGrade()		const;
 		void 				setGrade( int grade );
 		const std::string &	getName( void )	const;
 
 		void incrementGrade( void );
 		void decrementGrade( void );
-		
+
 };
 
 std::ostream& operator << ( std::ostream &o, const Bureaucrat &obj );

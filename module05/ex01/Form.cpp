@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/14 21:52:51 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:08:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,13 @@ Form::Form()
 	:	_name("undefine"),
 		_execute_grade( 50 ),
 		_sign_grade( 50 ),
-		_status( 0 ) {}
+		_status( 0 ) 
+{
+	if ( this->_execute_grade > 150 || this->_sign_grade > 150)
+		throw Form::GradeTooLowException();
+	else if ( this->_execute_grade < 1 || this->_sign_grade < 1)
+		throw Form::GradeTooHighException();
+}
 
 Form::Form ( const Form & other )
 	:	_name( other._name ),
@@ -28,7 +34,13 @@ Form::Form ( const std::string name, const int sign_grade, const int execute_gra
 	:	_name ( name ),
 		_sign_grade( sign_grade ),
 		_execute_grade( execute_grade ),
-		_status ( 0 ) {}
+		_status ( 0 )
+{
+	if ( this->_execute_grade > 150 || this->_sign_grade > 150)
+		throw Form::GradeTooLowException();
+	else if ( this->_execute_grade < 1 || this->_sign_grade < 1)
+		throw Form::GradeTooHighException();
+}
 
 Form::~Form() {}
 
@@ -77,5 +89,10 @@ std::ostream & operator << ( std::ostream & o, const Form & obj )
 		<< " Execute grade " << obj.getExecuteGrade()
 		<< " Status " << obj.getStatus();
 	return o ;
+}
+
+void	Form::beSigned( const Bureaucrat & obj )
+{
+	// if ( obj.getGrade() > this->getSignedGrade() );
 }
 
