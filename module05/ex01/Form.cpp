@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/15 20:08:08 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:05:27 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Form::Form()
 	:	_name("undefine"),
-		_execute_grade( 50 ),
 		_sign_grade( 50 ),
-		_status( 0 ) 
+		_execute_grade( 50 ),
+		_status( false ) 
 {
 	if ( this->_execute_grade > 150 || this->_sign_grade > 150)
 		throw Form::GradeTooLowException();
@@ -34,7 +34,7 @@ Form::Form ( const std::string name, const int sign_grade, const int execute_gra
 	:	_name ( name ),
 		_sign_grade( sign_grade ),
 		_execute_grade( execute_grade ),
-		_status ( 0 )
+		_status ( false )
 {
 	if ( this->_execute_grade > 150 || this->_sign_grade > 150)
 		throw Form::GradeTooLowException();
@@ -59,7 +59,18 @@ const char* Form::GradeTooHighException::what() const throw()
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return "❌ GradeTooHigthException";
+	return "❌ GradeTooLowException";
+}
+
+const char* Form::SignedException::what() const throw()
+{
+	return "❌ Form SignedException";
+}
+
+const char* Form::UnsinedException::what() const throw ()
+{
+	return "❌ Form UnsignException";
+	
 }
 
 const std::string& Form::getName() const 
@@ -93,6 +104,17 @@ std::ostream & operator << ( std::ostream & o, const Form & obj )
 
 void	Form::beSigned( const Bureaucrat & obj )
 {
-	// if ( obj.getGrade() > this->getSignedGrade() );
+	if ( obj.getGrade() > this->getSignedGrade() )
+		throw Form::GradeTooLowException();
+	else if ( this->_status )
+		throw Form::SignedException();
+	this->_status = true;
 }
 
+void Form::execute(Bureaucrat const & obj) const
+{
+	if ( obj.getGrade() > this->getExecuteGrade() )
+		throw Form::GradeTooLowException();
+	else if ( !this->_status )
+		throw Form::UnsinedException();
+}
