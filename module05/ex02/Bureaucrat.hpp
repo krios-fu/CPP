@@ -6,19 +6,16 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:14:49 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 21:06:13 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/15 20:02:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-# include <iostream>
-# include <string>
-# include <exception>
-
-# include "Form.hpp"
-class Form;
+#include <iostream>
+#include <string>
+#include <exception>
 
 class Bureaucrat
 {
@@ -51,7 +48,6 @@ virtual	~Bureaucrat();
 
 		void incrementGrade( void );
 		void decrementGrade( void );
-		void signForm( Form & obj );
 
 };
 

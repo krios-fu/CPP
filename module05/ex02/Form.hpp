@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:33 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 21:05:57 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:30:59 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 # include <string>
 # include <exception>
 # include <ostream>
-
 # include "Bureaucrat.hpp"
-class Bureaucrat;
 
 # define RED	"\033[1;31m"
 # define WHITE	"\033[0;37m"
@@ -64,6 +62,7 @@ class Form
 		};
 
 		void				beSigned( const Bureaucrat & obj );
+		void 				execute(Bureaucrat const &obj ) const;
 
 		const std::string&	getName()			const;
 		int					getSignedGrade()	const;

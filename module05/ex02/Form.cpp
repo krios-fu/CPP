@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 20:41:27 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:05:27 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,3 +111,10 @@ void	Form::beSigned( const Bureaucrat & obj )
 	this->_status = true;
 }
 
+void Form::execute(Bureaucrat const & obj) const
+{
+	if ( obj.getGrade() > this->getExecuteGrade() )
+		throw Form::GradeTooLowException();
+	else if ( !this->_status )
+		throw Form::UnsinedException();
+}

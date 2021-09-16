@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 17:34:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 21:10:50 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:33:33 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	main()
 	{
 		std::cout << RED"************ Test Form ************"WHITE << std::endl;
 		std::cout << f << std::endl;
-		b.signForm(f);
+		f.beSigned(b);
 		std::cout << f << std::endl;
 		std::cout << RED"************ Wrong Grade ************"WHITE << std::endl;
 		std::cout << a << std::endl;
-		a.signForm(f);
+		f.beSigned(a);
 		
 	}
 	catch(const std::exception& e)
@@ -53,7 +53,7 @@ int	main()
 			std::cout << a << std::endl;
 			std::cout << RED"************ Test Form ( Signed Exception )************"WHITE << std::endl;
 			std::cout << f << std::endl;
-			a.signForm(f);
+			f.beSigned(a);
 		}
 		catch(const std::exception& e)
 		{
@@ -61,12 +61,10 @@ int	main()
 			try
 			{
 				std::cout << RED"************ Test New Form************"WHITE << std::endl;
-				Form k("2", 42, 21);
+				Form k("1", 42, 21);
 				std::cout << k << std::endl;
-				a.signForm(k);
+				k.beSigned(a);
 				std::cout << k << std::endl;
-				std::cout << RED"************ Test Form ( Signed Exception )************"WHITE << std::endl;
-				b.signForm(k);
 			}
 			catch(const std::exception& e)
 			{
