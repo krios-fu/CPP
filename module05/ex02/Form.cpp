@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:09 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 20:05:27 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 19:14:50 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,14 @@ std::ostream & operator << ( std::ostream & o, const Form & obj )
 	return o ;
 }
 
+void Form::execute(Bureaucrat const &bureaucrat) const
+{
+	if (bureaucrat.getGrade() > this->_execute_grade)
+		throw Form::GradeTooLowException();
+	if (!this->_sign_grade)
+		throw Form::UnsinedException();
+}
+
 void	Form::beSigned( const Bureaucrat & obj )
 {
 	if ( obj.getGrade() > this->getSignedGrade() )
@@ -111,10 +119,3 @@ void	Form::beSigned( const Bureaucrat & obj )
 	this->_status = true;
 }
 
-void Form::execute(Bureaucrat const & obj) const
-{
-	if ( obj.getGrade() > this->getExecuteGrade() )
-		throw Form::GradeTooLowException();
-	else if ( !this->_status )
-		throw Form::UnsinedException();
-}

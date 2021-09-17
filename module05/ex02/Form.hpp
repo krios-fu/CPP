@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:44:33 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 20:30:59 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 20:33:55 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
 # include <string>
 # include <exception>
 # include <ostream>
+
 # include "Bureaucrat.hpp"
+class Bureaucrat;
 
 # define RED	"\033[1;31m"
 # define WHITE	"\033[0;37m"
 
 class Form
 {
+	protected: 
 	private:
 		const std::string	_name;
 		const int			_sign_grade;
@@ -33,7 +36,7 @@ class Form
 	public:
 		Form( const Form & other );
 		Form( const std::string name, const int sign_grade, const int execute_grade );
-		~Form();
+virtual	~Form();
 
 		Form& operator=( const Form & other );
 
@@ -62,7 +65,7 @@ class Form
 		};
 
 		void				beSigned( const Bureaucrat & obj );
-		void 				execute(Bureaucrat const &obj ) const;
+virtual	void				execute( Bureaucrat const & executor ) const = 0;
 
 		const std::string&	getName()			const;
 		int					getSignedGrade()	const;

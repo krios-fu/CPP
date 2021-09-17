@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:40:56 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/14 21:20:40 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:53:19 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,23 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "❌ GradeTooLowException";
+}
+
+void Bureaucrat::signForm( Form & form )
+{
+	if ( form.getStatus() )
+	{
+		std::cout << *this << " cannot sign " << form
+				<< " because the form is already signed." << std::endl;
+	}
+	else if ( form.getSignedGrade() < this->_grade )
+	{
+		std::cout << *this << " cannot sign " << form
+				<< " because it's grade is too low." << std::endl;
+	}
+	else
+	{
+		std::cout << *this << " signs " << form << std::endl;
+	}
+	form.beSigned(*this);
 }
