@@ -6,19 +6,19 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 17:34:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/18 00:18:00 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/18 00:29:25 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
-	Form *shrubbery = new ShrubberyCreationForm( "home" );
-	Form *roboto = new RobotomyRequestForm( "Wall-e" );
-	Form *presi = new PresidentialPardonForm( "Clinton" );
+	Intern *becario = new Intern();
+	
+	Form *shrubbery = becario->makeForm( "Shrubbery Creation", "lol1" );
+	Form *roboto = becario->makeForm( "Robotomy Request", "lol2" );
+	Form *presi = becario->makeForm( "Presidential Pardon", "lol3 " );
 
 	try
 	{
@@ -70,10 +70,23 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-	
+
+	try
+	{
+		std::cout << RED"************ MakeForm ************"WHITE << std::endl;
+		Form *wrongPresi = becario->makeForm( "Presidential Pardon", "lol3" );
+		std::cout << *wrongPresi << std::endl;
+		delete wrongPresi;
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	
 	delete shrubbery;
 	delete roboto;
 	delete presi;
+
+	return 0;
 }
