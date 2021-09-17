@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 18:53:28 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/17 20:31:07 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 21:00:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ const char * ShrubberyCreationForm::FileWriteExeption::what() const throw ()
 	return "❌ FileWriteExeption";
 }
 
-void ShrubberyCreationForm::execute( Bureaucrat const & other ) const
+void ShrubberyCreationForm::execute( Bureaucrat const & executor ) const
 {
-	Form::execute( other );
-
+	Form::execute( executor );
 	std::string const tree[1] = 
 	{
 		"┈╱╲┈┈┈╱╲┈┈┈╱╲┈┈\n"\
@@ -55,13 +54,10 @@ void ShrubberyCreationForm::execute( Bureaucrat const & other ) const
 	};
 	std::string const name_file( this->_target + "__shrubbery" );
 	std::ofstream file;
-
 	file.open( name_file, std::ios::trunc );
 	if ( !file.is_open() )
-		throw ShrubberyCreationForm::FileOpenExeption();
-	
+		throw ShrubberyCreationForm::FileOpenExeption();	
 	file << tree[0];
-
 	if ( file.bad() )
 	{
 		file.close();

@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 17:53:37 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/17 20:34:29 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 20:55:36 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ virtual	~ShrubberyCreationForm();
 
 		ShrubberyCreationForm & operator= ( const ShrubberyCreationForm & other );
 
-	void execute(Bureaucrat const & executor) const;
+	void execute( Bureaucrat const & executor ) const;
 };
 
 #endif 

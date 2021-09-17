@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:40:56 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 20:53:19 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:31:54 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,18 @@ void Bureaucrat::signForm( Form & form )
 		std::cout << *this << " signs " << form << std::endl;
 	}
 	form.beSigned(*this);
+}
+
+void Bureaucrat::executeForm ( Form const & form )
+{
+	try
+	{
+		form.execute( *this );
+		std::cout << this->getName() << " executes " << form.getName();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }

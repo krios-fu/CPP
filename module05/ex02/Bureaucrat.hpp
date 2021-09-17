@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:14:49 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/16 21:06:13 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/17 22:28:37 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ virtual	~Bureaucrat();
 		void incrementGrade( void );
 		void decrementGrade( void );
 		void signForm( Form & obj );
+
+		void executeForm( Form const & form );
 
 };
 
