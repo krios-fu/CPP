@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:59:30 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/20 20:51:45 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/20 21:56:53 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,19 @@ Base *generate( void )
 
 void identify(Base *p)
 {
-	if ( dynamic_cast<A *>(p) )
-		std::cout << "A" << std::endl;
-	else if ( dynamic_cast<B *>(p) )
-		std::cout << "B" << std::endl;
-	else if ( dynamic_cast<C *>(p) )
-		std::cout << "C" << std::endl;
+	try
+	{
+		if ( dynamic_cast<A *>(p) )
+			std::cout << "A" << std::endl;
+		else if ( dynamic_cast<B *>(p) )
+			std::cout << "B" << std::endl;
+		else if ( dynamic_cast<C *>(p) )
+			std::cout << "C" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 int main ()
