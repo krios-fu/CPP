@@ -5,21 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 19:33:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/20 18:56:39 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/09/20 19:06:23 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/09/20 19:56:37 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#include <stdint.h>
+#include <iostream>
 
-int main ( int argc, char *argv[] ) 
+typedef struct	Data
 {
-	if ( argc == 2)
-	{
-		Conversion _42( static_cast <const std::string> (argv[1]) );
-		_42.displayTypes();
-	}
-	else
-		std::cout << "Bad arguments " << std::endl;
+	int a;
+}				Data;
+
+uintptr_t serialize(Data* ptr)
+{
+	return reinterpret_cast<uintptr_t>(ptr);
+}
+
+Data* deserialize(uintptr_t raw) 
+{
+	return reinterpret_cast<Data *>(raw);
+}
+
+int main ( void )
+{
+	Data data, *data_b;
+
+	data.a=42;
+	
+	uintptr_t _serialize = serialize( &data );
+
+	data_b = deserialize( _serialize );
+
+	std::cout << data_b->a << std::endl;
+	std::cout << data_b << std::endl;
+	std::cout << &data << std::endl;
+
 	return 0;
 }

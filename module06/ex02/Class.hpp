@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Class.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 19:33:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/20 18:56:39 by krios-fu         ###   ########.fr       */
+/*   Created: 2021/09/20 20:00:04 by krios-fu          #+#    #+#             */
+/*   Updated: 2021/09/20 20:29:26 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#ifndef CLASS_HPP
+#define CLASS_HPP
 
-int main ( int argc, char *argv[] ) 
+# include <stdlib.h>
+# include <time.h>
+
+class Base
 {
-	if ( argc == 2)
-	{
-		Conversion _42( static_cast <const std::string> (argv[1]) );
-		_42.displayTypes();
-	}
-	else
-		std::cout << "Bad arguments " << std::endl;
-	return 0;
-}
+	public:
+		virtual	~Base() {};
+};
+
+class A : public Base{};
+class B : public Base{};
+class C : public Base{};
+
+Base *generate( void );
+void identify( Base *p );
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:10:25 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/20 18:22:27 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/20 19:55:03 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void Conversion::displayFloat( void )
 
 		num = static_cast < float > ( std::stof( this->_string ) );
 		std::cout << "float: " << num;
-		if (roundf( num ) == num )
+		if (static_cast <int> (num) == num )
 			std::cout << ".0";
 		std::cout << "f" << std::endl;
 
@@ -105,7 +105,7 @@ void Conversion::displayDouble( void )
 
 		num = static_cast < double > ( std::stod( this->_string ) );
 		std::cout << "double: " << num;
-		if (roundf( num ) == num )
+		if (static_cast <int> ( num ) == num )
 			std::cout << ".0";
 		std::cout  << std::endl;
 	}
