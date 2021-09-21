@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 18:32:26 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/21 20:36:52 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/21 22:37:08 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ virtual	~Array()
 
 		T &operator [] ( unsigned int n )
 		{
-			if ( n > static_cast< unsigned int >( this->_size ) - 1)
+			if ( n > static_cast< unsigned int >( this->_size ) - 1 || this->getSize() == 0 )
 				throw ArrayGlobalException();
 			return( this->_data[n] );
 		};
