@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:12:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/22 21:02:28 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/22 21:12:27 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,8 @@ int main ( int argc, char *argv[] )
 
 				try 
 				{
-					std::vector<int>::iterator iterV = easyFind(vArray, static_cast <int> (stoi(static_cast<std::string> (argv[1])))) ;
+					std::vector<int>::iterator iterV = easyFind( vArray, static_cast <int> ( stoi(static_cast<std::string> ( argv[1] ) ) ) );
 					std::cout << *iterV << std::endl;
-
 				}
 				catch( std::invalid_argument& )
 				{
@@ -56,7 +55,7 @@ int main ( int argc, char *argv[] )
 			lArray.push_back( 12 );
 			try 
 			{
-				std::list<int>::iterator iterL = easyFind(lArray, static_cast <int> (stoi(static_cast<std::string> (argv[1]))));
+				std::list<int>::iterator iterL = easyFind( lArray, static_cast <int> ( stoi( static_cast<std::string> ( argv[1] ) ) ) );
 				std::cout << *iterL << std::endl;
 			}
 			catch( std::invalid_argument& )
