@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 19:12:10 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/22 21:12:27 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 01:14:52 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main ( int argc, char *argv[] )
 		try
 		{
 			
-				std:: cout << "************ Vector ***********" << std::endl;
+				std::cout << "************ Vector ***********" << std::endl;
 				std::vector<int> vArray;
 				vArray.push_back( 1 );
 				vArray.push_back( 2 );

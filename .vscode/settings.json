@@ -65,6 +65,7 @@
 		"deque": "cpp",
 		"stack": "cpp",
 		"filesystem": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"span": "cpp"
 	}
 }
