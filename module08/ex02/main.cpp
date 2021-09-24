@@ -6,11 +6,11 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 02:15:30 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/24 03:46:29 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 03:57:14 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "MutantStack.hpp"
+# include "mutantstack.hpp"
 # include <iostream>
 # include <list>
 
@@ -18,7 +18,7 @@ int main()
 {
 
 std::cout << "************ mutantstack ***********" << std::endl;
-	MutantStack<int> mstack;
+	mutantstack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << mstack.top() << std::endl;
@@ -31,8 +31,8 @@ std::cout << "************ mutantstack ***********" << std::endl;
 	mstack.push(0);
 	std::cout << "Size: " << mstack.size() << std::endl;
 
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	mutantstack<int>::iterator it = mstack.begin();
+	mutantstack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
 	std::cout << "Display stack" << std::endl;
@@ -45,8 +45,8 @@ std::cout << "************ mutantstack ***********" << std::endl;
 
 	std::cout << "Display Reverse stack" << std::endl;
 	
-	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
-	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	mutantstack<int>::reverse_iterator rit = mstack.rbegin();
+	mutantstack<int>::reverse_iterator rite = mstack.rend();
 	++rit;
 	--rit;
 	while (rit != rite)

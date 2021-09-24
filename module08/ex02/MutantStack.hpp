@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 01:48:48 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/24 03:10:36 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 03:56:23 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 
 template <typename T>
-class MutantStack : public std::stack<T>
+class mutantstack : public std::stack<T>
 {
 	public:
 		typedef typename std::stack<T>::container_type::iterator iterator;
@@ -26,11 +26,11 @@ class MutantStack : public std::stack<T>
 		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 		typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
-		MutantStack() : std::stack<T>(){};
-		MutantStack( const MutantStack<T> & other ) : std::stack<T>(other) {};
-virtual	~MutantStack(){};
+		mutantstack() : std::stack<T>(){};
+		mutantstack( const mutantstack<T> & other ) : std::stack<T>(other) {};
+virtual	~mutantstack(){};
 
-	MutantStack & operator=( const MutantStack<T> & other )
+	mutantstack & operator=( const mutantstack<T> & other )
 	{
 		if ( *this == &other)
 			return *this;

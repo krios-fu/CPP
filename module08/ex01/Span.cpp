@@ -6,30 +6,30 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 20:31:50 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/23 23:20:23 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 03:55:29 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "span.hpp"
 
-Span::Span( unsigned int size )
+span::span( unsigned int size )
 	: _size( size )
 {
 }
 
-Span::Span( const Span &other )
+span::span( const span &other )
 {
 	this->_container.clear();
 	this->_size = other._size;
 	this->_container = other._container;
 }
 
-Span::~Span( )
+span::~span( )
 {
 	this->_container.clear();
 }
 
-Span& Span::operator=( const Span &other )
+span& span::operator=( const span &other )
 {
 	if ( this != &other)
 	{
@@ -39,23 +39,23 @@ Span& Span::operator=( const Span &other )
 	}
 	return *this;
 }
-const char * Span::SpanFillGlobalException::what() const throw ()
+const char * span::SpanFillGlobalException::what() const throw ()
 {
 	return "❌ SpanFillGlobalException";
 }
 
-const char * Span::SpanIntervalException::what() const throw ()
+const char * span::SpanIntervalException::what() const throw ()
 {
 	return "❌ SpanIntervalException";
 }
-void Span::addNumber( int N )
+void span::addNumber( int N )
 {
 	if ( this->_container.size() == this->_size )
 		throw SpanFillGlobalException();
 	this->_container.push_back( N );
 }
 
-unsigned int Span::shortestSpan( void )
+unsigned int span::shortestSpan( void )
 {
 	unsigned int diff;
 
@@ -77,7 +77,7 @@ unsigned int Span::shortestSpan( void )
 }
 
 
-unsigned int Span::longestSpan( void )
+unsigned int span::longestSpan( void )
 {
 	if ( this->_container.size() <= 1 )
 		throw SpanIntervalException();

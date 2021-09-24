@@ -6,11 +6,11 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 20:31:47 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/24 01:24:38 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 03:54:25 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "span.hpp"
 
 int main ()
 {
@@ -19,7 +19,7 @@ int main ()
 	{
 		std:: cout << "************ sp ***********" << std::endl;
 
-		Span sp = Span(5);
+		span sp = span(5);
 		
 		sp.addNumber(5);
 		sp.addNumber(3);
@@ -40,7 +40,7 @@ int main ()
 	{
 		std::cout << "************ spRandom ***********" << std::endl;
 		
-		Span spRandom( 100000 );
+		span spRandom( 100000 );
 		std::vector<int>aux;
 		for( int i = 0; i < 100000 ; i++ )
 		{

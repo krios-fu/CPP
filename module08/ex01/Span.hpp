@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 20:31:53 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/24 01:06:16 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/24 03:52:34 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@
 #include <iostream>
 #include <exception>
 
-class Span
+class span
 {
 	private:
 		unsigned int _size;
 		std::vector<int> _container;
-		Span(/* args */);
+		span(/* args */);
 	public:
-		Span( unsigned int size );
-		Span( const Span & other );
-		~Span();
+		span( unsigned int size );
+		span( const span & other );
+		~span();
 
-		Span & operator=( const Span & other );
+		span & operator=( const span & other );
 
 		void addNumber( int N );
 
