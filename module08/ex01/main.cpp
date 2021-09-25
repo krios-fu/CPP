@@ -6,7 +6,7 @@
 /*   By: krios-fu <krios-fu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 20:31:47 by krios-fu          #+#    #+#             */
-/*   Updated: 2021/09/24 03:54:25 by krios-fu         ###   ########.fr       */
+/*   Updated: 2021/09/25 17:16:19 by krios-fu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main ()
 		std::vector<int>aux;
 		for( int i = 0; i < 100000 ; i++ )
 		{
-			aux.push_back( i *=  2  );
+			aux.push_back( i *  2  );
 		}
 		spRandom.addNumber( aux.begin(), aux.end() );
 
