@@ -1,6 +1,6 @@
-NAME = btc
+NAME = RPN
 
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp RPN.cpp
 
 CXX = clang++
 

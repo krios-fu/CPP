@@ -1,6 +1,6 @@
-NAME = btc
+NAME = PmergeMe
 
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp PmergeMe.cpp
 
 CXX = clang++
 
